@@ -18,5 +18,6 @@ export default defineConfig({
       },
     }
   },
-  site: 'https://styledrive.github.io'
+  site: 'https://styledrive.github.io',
+  base: '/'
 });
