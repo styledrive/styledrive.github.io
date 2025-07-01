@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "deploy": "astro build && gh-pages -d dist --git",
+    "deploy": "astro build && gh-pages -d dist",
     "preview": "astro preview --host",
     "astro": "astro"
   },
