@@ -133,16 +133,29 @@ Benchmarking of End-To-End Autonomous Driving</h1>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-        <p>
-          While personalization has been explored in traditional autonomous driving systems, it remains largely overlooked in end-to-end autonomous driving (E2EAD), despite its growing prominence. This gap is critical, as user-aligned behavior is essential for trust, comfort, and widespread adoption of autonomous vehicles. A core challenge is the lack of large-scale real-world datasets annotated with diverse and fine-grained driving preferences, hindering the development and evaluation of personalized E2EAD models. In this work, <strong>we present the first large-scale real-world dataset enriched with annotations capturing diverse driving preferences</strong>, establishing a foundation for personalization in E2EAD. We extract static environmental features from real-world road topology and infer dynamic contextual cues using a fine-tuned visual language model (VLM), enabling consistent and fine-grained scenario construction. Based on these scenarios, we derive objective preference annotations through behavioral distribution analysis and rule-based heuristics. To address the inherent subjectivity of driving style, we further employ the VLM to generate subjective annotations by jointly modeling scene semantics and driver behavior. <strong>Final high-quality labels are obtained through a human-in-the-loop verification process that fuses both perspectives</strong>. <strong>Building on this dataset, we propose the first benchmark for evaluating personalized E2EAD models</strong>. We assess several state-of-the-art models with and without preference conditioning, demonstrating that incorporating personalized preferences results in behavior more aligned with human driving. <strong>Our work lays the foundation for personalized E2EAD by providing a standardized platform to systematically integrate human preferences into data-driven E2EAD systems</strong>, catalyzing future research in human-centric autonomy.
-        </p>
+        <div class="content has-text-justified is-size-6">
+          <p>
+            Despite the growing capability of end-to-end autonomous driving (E2EAD) systems, personalization remains largely overlooked. Aligning driving behavior with individual user preferences is essential for comfort, trust, and real-world deployment, but existing datasets and benchmarks lack the necessary structure and scale to support this goal.
+          </p>
+          <p>
+            <strong>StyleDrive</strong> addresses this gap through the following key contributions:
+          </p>
+          <ul>
+            <li><strong>A novel large-scale real-world dataset</strong> for personalized E2EAD, annotated with both objective behaviors and subjective driving style preferences across diverse traffic scenarios.</li>
 
+            <li><strong>A multi-stage annotation pipeline</strong> combining rule-based analysis, visual language model (VLM) reasoning, and human-in-the-loop verification to ensure consistent and interpretable style labels.</li>
+
+            <li><strong>The first benchmark for personalized E2EAD</strong>, enabling standardized and quantitative comparison of style-conditioned driving behavior across different model architectures.</li>
+
+            <li><strong>Comprehensive empirical results</strong> showing that style-aware models better align with human behavior, demonstrating the value of personalization for improved autonomy.</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 <!-- End paper abstract -->
 
 <!-- Paper Overview Image -->
@@ -209,6 +222,69 @@ Benchmarking of End-To-End Autonomous Driving</h1>
   </div>
 </section>
 
+<section class="section">
+  <div class="container" style="max-width: 860px;">
+    <h3 class="title is-4">Dataset Structure</h3>
+    <p class="is-size-6">
+      Each annotated instance in the StyleDrive dataset contains rich semantic, dynamic, and contextual attributes. Below is a sample structure of the data format:
+    </p>
+
+    <div class="table-container" style="overflow-x: auto;">
+      <table class="table is-bordered is-fullwidth is-size-7" style="font-family: monospace;">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>vx_ego, vy_ego, v_ego</td><td>Ego vehicle velocity components (x, y) and magnitude</td></tr>
+          <tr><td>ax_ego, ay_ego, a_ego</td><td>Ego acceleration components and magnitude</td></tr>
+          <tr><td>yaw, yaw_diff</td><td>Heading angle and its temporal difference</td></tr>
+          <tr><td>v_avg, v_std</td><td>Average and standard deviation of ego speed (last 10 frames)</td></tr>
+          <tr><td>vy_max</td><td>Maximum lateral velocity magnitude</td></tr>
+          <tr><td>a_max, a_std, ax_avg</td><td>Maximum acceleration, std of acceleration, average longitudinal acceleration</td></tr>
+          <tr><td>ini_direction_judge</td><td>Initial motion direction category</td></tr>
+          <tr><td>scenario_type</td><td>Scenario type from VLM semantic parsing</td></tr>
+          <tr><td>scene_token</td><td>Unique scene identifier</td></tr>
+          <tr><td>has_left_rear / right_rear</td><td>Boolean flags indicating vehicle presence in rear zones</td></tr>
+          <tr><td>left_rear_min / right_rear_min</td><td>Minimum relative distance to rear vehicles</td></tr>
+          <tr><td>speed_mode</td><td>Speed-related preference classification (e.g., aggressive, conservative)</td></tr>
+          <tr><td>front_frame</td><td>Distance to front vehicle across frames</td></tr>
+          <tr><td>safe_frame</td><td>Frame-wise safety flags</td></tr>
+          <tr><td>safe_ratio, unsafe_ratio, oversafe_ratio</td><td>Distribution of safety judgments</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h3 class="title is-4 has-text-centered">Traffic Scenario Videos</h3>
+    <p class="is-size-6 has-text-centered mb-4">
+      The StyleDrive dataset covers 11 real-world driving scenarios, each exhibiting distinct challenges and personalized behaviors.
+    </p>
+
+    <div id="video-carousel" class="carousel results-carousel">
+      <div class="item has-text-centered">
+        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
+          <source src="static/videos/067328_1629228525900693_5848b2ff8a1959f0.mp4" type="video/mp4">
+        </video>
+        <p class="mt-2"><strong>Crosswalks</strong><br><span class="is-size-7">Merging into circular flow under pressure</span></p>
+      </div>
+
+      <div class="item has-text-centered">
+        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
+          <source src="static/videos/scenario_lanechange.mp4" type="video/mp4">
+        </video>
+        <p class="mt-2"><strong>Lane Change</strong><br><span class="is-size-7">Changing lanes in dynamic traffic</span></p>
+      </div>
+
+      <!-- Repeat for other scenarios -->
+    </div>
+  </div>
+</section>
 
 
 
@@ -237,11 +313,122 @@ Benchmarking of End-To-End Autonomous Driving</h1>
   </div>
 </section>
 
+
+
+<section class="section">
+  <div class="container" style="max-width: 860px;">
+    <!-- Table 3 -->
+    <div class="content has-text-centered">
+      <h3 class="title is-4">DriveStyle Benchmark Main Results</h3>
+      <p class="is-size-6">
+        Style conditioning improves behavioral alignment, as reflected by higher SM-PDMS scores across most model families.
+      </p>
+    </div>
+    <div class="table-container" style="overflow-x: auto;">
+      <table class="table is-bordered is-striped is-fullwidth is-size-7">
+        <thead>
+          <tr>
+            <th>Models</th>
+            <th>NC ↑</th>
+            <th>DAC ↑</th>
+            <th>TTC ↑</th>
+            <th>Comf. ↑</th>
+            <th>EP ↑</th>
+            <th>SM-PDMS ↑</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AD-MLP</td><td>92.63</td><td>77.68</td><td>83.83</td><td>99.75</td><td>78.01</td><td>63.72</td></tr>
+          <tr><td>TransFuser</td><td>96.74</td><td>88.43</td><td>91.08</td><td>99.65</td><td>84.39</td><td>78.12</td></tr>
+          <tr><td>WoTE</td><td>97.29</td><td>92.39</td><td>92.53</td><td>99.13</td><td>76.31</td><td>79.56</td></tr>
+          <tr><td>DiffusionDrive</td><td>96.66</td><td>91.45</td><td>90.63</td><td>99.73</td><td>80.39</td><td>79.33</td></tr>
+          <tr><td>AD-MLP-Style</td><td>92.38</td><td>73.23</td><td>83.14</td><td style="color: red;">99.90</td><td>78.55</td><td>60.02</td></tr>
+          <tr><td>TransFuser-Style</td><td>97.23</td><td>90.36</td><td>92.61</td><td>99.73</td><td style="color: red;">84.95</td><td>81.09</td></tr>
+          <tr><td>WoTE-Style</td>
+              <td style="color: blue;">97.58</td>
+              <td style="color: blue;">93.44</td>
+              <td style="color: blue;">93.70</td>
+              <td>99.26</td>
+              <td>77.38</td>
+              <td style="color: blue;">81.38</td>
+          </tr>
+          <tr><td>DiffusionDrive-Style</td>
+              <td style="color: red;">97.81</td>
+              <td style="color: red;">93.45</td>
+              <td style="color: red;">92.81</td>
+              <td style="color: red;">99.85</td>
+              <td style="color: red;">84.84</td>
+              <td style="color: red;">84.10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+        <!-- Table 4 -->
+    <div class="content has-text-centered">
+      <h3 class="title is-4">Closeness to Human Demonstrations</h3>
+      <p class="is-size-6">
+        Style-conditioned models exhibit lower L2 trajectory error compared to vanilla models, highlighting improved consistency with human driving behavior under preference-aware conditions.
+      </p>
+    </div>
+    <div class="table-container" style="overflow-x: auto;">
+      <table class="table is-bordered is-striped is-fullwidth is-size-7">
+        <thead>
+          <tr>
+            <th>Models</th>
+            <th>L2 (2s) ↓</th>
+            <th>L2 (3s) ↓</th>
+            <th>L2 (4s) ↓</th>
+            <th>L2 (Avg) ↓</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>WoTE</td><td>0.733</td><td>1.434</td><td>2.349</td><td>1.506</td></tr>
+          <tr><td>AD-MLP</td><td>0.503</td><td>1.262</td><td>2.383</td><td>1.382</td></tr>
+          <tr><td>TransFuser</td><td>0.431</td><td>0.963</td><td>1.701</td><td>1.032</td></tr>
+          <tr><td>DiffusionDrive</td><td>0.471</td><td>1.086</td><td>1.945</td><td>1.167</td></tr>
+          <tr><td>WoTE-Style</td><td>0.673</td><td>1.340</td><td>2.223</td><td>1.412</td></tr>
+          <tr><td>AD-MLP-Style</td><td>0.510</td><td>1.230</td><td>2.321</td><td>1.354</td></tr>
+          <tr><td>TransFuser-Style</td><td>0.424</td><td>0.937</td><td>1.656</td><td>1.006</td></tr>
+          <tr><td>DiffusionDrive-Style</td>
+              <td style="font-weight: bold;">0.417</td>
+              <td style="font-weight: bold;">0.940</td>
+              <td style="font-weight: bold;">1.646</td>
+              <td style="font-weight: bold;">1.001</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Spacer -->
+    <br><br>
+
+  </div>
+</section>
+
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
-        <h2 class="title is-3 has-text-centered">Alternative Annotation View</h2>
+        <h2 class="title is-3 has-text-centered">Case View</h2>
+        <figure class="image mt-4">
+          <img src="static/images/Policy_Cases.png" alt="Alternative Annotation Framework" style="width: 100%; height: auto;">
+        </figure>
+        <p class="has-text-justified is-size-6 mt-3">
+          <!-- <em>An alternative visualization of the annotation process, highlighting semantic extraction, behavioral labeling, and human-in-the-loop fusion.</em> -->
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Dataset View</h2>
         <figure class="image mt-4">
           <img src="static/images/alter.png" alt="Alternative Annotation Framework" style="width: 100%; height: auto;">
         </figure>
@@ -287,6 +474,16 @@ Benchmarking of End-To-End Autonomous Driving</h1>
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+<script>
+  bulmaCarousel.attach('#video-carousel', {
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    autoplay: false,  // 你可以改成 true
+    loop: true,
+    pauseOnHover: true,
+    navigation: true
+  });
+</script>
 
   </body>
-  </html>
+</html>
