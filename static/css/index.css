@@ -300,3 +300,18 @@ body {
   background-color: #6a0dad;
   color: white;
 }
+
+.footer-logo {
+  max-height: 84px; /* 控制整体大小：建议 64 ~ 80px */
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-logo {
+    max-height: 56px;
+  }
+}
