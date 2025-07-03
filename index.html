@@ -23,12 +23,21 @@
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  </style>
+
 
   <title>StyleDrive</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -63,12 +72,18 @@
 
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item nav-link" href="#video-carousel">Videos</a>
+        <a class="navbar-item nav-link" href="#Abstract">Abstract</a>
+        <a class="navbar-item nav-link" href="#Method">Method</a>
         <a class="navbar-item nav-link" href="#Dataset">Dataset</a>
+        <a class="navbar-item nav-link" href="#Videos">Videos</a>
+        <a class="navbar-item nav-link" href="#Benchmark">Benchmark</a>
+        <a class="navbar-item nav-link" href="#CaseStudy">Case Study</a>
         <a class="navbar-item nav-link" href="#BibTeX">BibTeX</a>
+        <a class="navbar-item nav-link" href="https://huggingface.co/datasets/Ryhn98/StyleDrive-Dataset" target="_blank">Hugging Face</a>
         <a class="navbar-item nav-link" href="https://github.com/AIR-THU/StyleDrive" target="_blank">GitHub</a>
       </div>
     </div>
+  </div>
   </div>
 </nav>
 
@@ -85,14 +100,14 @@ Benchmarking of End-To-End Autonomous Driving</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://ry-hao.top/" target="_blank">Ruiyang Hao</a><sup>1</sup>,</span>
+                <a href="https://ry-hao.top/" target="_blank" style="color: #6a0dad; font-weight: 500;">Ruiyang Hao</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="https://arthur12137.com/" target="_blank">Bowen Jing</a><sup>2</sup>,</span>
+                  <a href="https://arthur12137.com/" target="_blank" style="color: #6a0dad; font-weight: 500;">Bowen Jing</a><sup>2</sup>,</span>
                   <span class="author-block">
-                    <a href="https://scholar.google.com/citations?user=JW4F5HoAAAAJ" target="_blank">Haibao Yu</a><sup>1,3</sup>,</span>
+                    <a href="https://scholar.google.com/citations?user=JW4F5HoAAAAJ" target="_blank" style="color: #6a0dad; font-weight: 500;">Haibao Yu</a><sup>1,3</sup>,</span>
                   </span>
                   <span class="author-block">
-                    <a href="https://scholar.google.com/citations?user=Qg7T6vUAAAAJ" target="_blank">Zaiqing Nie</a><sup>1,*</sup></span>
+                    <a href="https://scholar.google.com/citations?user=Qg7T6vUAAAAJ" target="_blank" style="color: #6a0dad; font-weight: 500;">Zaiqing Nie</a><sup>1,*</sup></span>
                   </span>
                   </div>
 
@@ -163,27 +178,42 @@ Benchmarking of End-To-End Autonomous Driving</h1>
 
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section hero is-light" id="Abstract">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified is-size-6">
+        <h2 class="title is-3 mb-5">Abstract</h2>
+        <div class="content has-text-justified is-size-5" style="line-height: 1.8;">
+          
           <p>
-            Despite the growing capability of end-to-end autonomous driving (E2EAD) systems, personalization remains largely overlooked. Aligning driving behavior with individual user preferences is essential for comfort, trust, and real-world deployment, but existing datasets and benchmarks lack the necessary structure and scale to support this goal.
+            Despite the growing capability of <strong>end-to-end autonomous driving (E2EAD)</strong> systems, <strong>personalization remains largely overlooked</strong>.
+            Aligning driving behavior with individual user preferences is essential for comfort, trust, and real-world deployment—
+            but existing datasets and benchmarks lack the necessary structure and scale to support this goal.
           </p>
+
           <p>
-            <strong>StyleDrive</strong> addresses this gap through the following key contributions:
+            <strong>StyleDrive</strong> bridges this gap with the following key contributions:
           </p>
-          <ul>
-            <li><strong>A novel large-scale real-world dataset</strong> for personalized E2EAD, annotated with both objective behaviors and subjective driving style preferences across diverse traffic scenarios.</li>
 
-            <li><strong>A multi-stage annotation pipeline</strong> combining rule-based analysis, visual language model (VLM) reasoning, and human-in-the-loop verification to ensure consistent and interpretable style labels.</li>
-
-            <li><strong>The first benchmark for personalized E2EAD</strong>, enabling standardized and quantitative comparison of style-conditioned driving behavior across different model architectures.</li>
-
-            <li><strong>Comprehensive empirical results</strong> showing that style-aware models better align with human behavior, demonstrating the value of personalization for improved autonomy.</li>
+          <ul style="list-style: none; padding-left: 0;">
+            <li class="mb-3">
+              <span style="font-weight: bold; color: #6a0dad;">Large-scale dataset:</span>
+              A real-world dataset for personalized E2EAD, annotated with both objective behavior and subjective style preferences across diverse traffic scenarios.
+            </li>
+            <li class="mb-3">
+              <span style="font-weight: bold; color: #6a0dad;">Multi-stage annotation:</span>
+              A hybrid pipeline combining rule-based heuristics, vision-language model reasoning, and human verification to ensure consistent and interpretable labels.
+            </li>
+            <li class="mb-3">
+              <span style="font-weight: bold; color: #6a0dad;">Personalized benchmark:</span>
+              The first benchmark for style-conditioned driving evaluation across different model families.
+            </li>
+            <li class="mb-3">
+              <span style="font-weight: bold; color: #6a0dad;">Empirical validation:</span>
+              Extensive experiments show style-aware models align better with human behavior, proving the value of personalization in autonomy.
+            </li>
           </ul>
+          
         </div>
       </div>
     </div>
@@ -191,10 +221,11 @@ Benchmarking of End-To-End Autonomous Driving</h1>
 </section>
 
 
+
 <!-- End paper abstract -->
 
 <!-- Paper Overview Image -->
-<section class="section hero is-light">
+<section class="section hero is-light" id="Method">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
@@ -215,167 +246,288 @@ Benchmarking of End-To-End Autonomous Driving</h1>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="Dataset">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h2 class="title is-3">The StyleDrive Dataset</h2>
-        <p class="has-text-justified is-size-6">
-          <strong>StyleDrive</strong> is the first large-scale real-world dataset specifically designed to support personalized end-to-end autonomous driving. Built upon the OpenScene dataset, StyleDrive consists of nearly <strong>30,000 driving scenarios</strong> annotated with both <strong>objective behavioral signals</strong> and <strong>subjective driving style preferences</strong>. It captures diverse road conditions, semantic interactions, and motion patterns across urban and rural settings. By combining static road topology with dynamic context—extracted via a fine-tuned vision-language model (VLM)—StyleDrive enables detailed modeling of driving scenarios and nuanced behavior understanding. The annotations are produced through a hybrid pipeline that fuses rule-based heuristics with VLM-based reasoning, and are further verified through a human-in-the-loop process. This makes StyleDrive a <strong>high-quality, interpretable, and scalable resource</strong> for advancing research in human-centric autonomous driving.
-        </p>
+        <h2 class="title is-3 mb-5">The StyleDrive Dataset</h2>
+
+        <div class="content has-text-justified is-size-5" style="line-height: 1.8;">
+          <p>
+            <strong>StyleDrive</strong> is the first large-scale real-world dataset tailored for <strong>personalized end-to-end autonomous driving (E2EAD)</strong>.
+            It is constructed on top of the <strong>OpenScene</strong> dataset, and contains nearly <strong>30,000 driving scenarios</strong> across urban and rural environments.
+          </p>
+
+          <p>
+            Each scenario is annotated with both:
+          </p>
+
+          <ul style="list-style: none; padding-left: 0;">
+            <li class="mb-2">
+              <span style="font-weight: bold; color: #6a0dad;">Objective behavioral features:</span>
+              e.g. velocity, acceleration, yaw rate, lane position, motion history.
+            </li>
+            <li class="mb-2">
+              <span style="font-weight: bold; color: #6a0dad;">Subjective driving style preferences:</span>
+              categorized as <em>Aggressive</em>, <em>Normal</em>, or <em>Conservative</em>.
+            </li>
+          </ul>
+
+          <p>
+            To ensure high-quality and interpretable annotations, we propose a <strong>multi-stage labeling pipeline</strong>:
+          </p>
+
+          <ul style="list-style: none; padding-left: 0;">
+            <li class="mb-2">
+              <span style="font-weight: bold; color: #6a0dad;">Rule-based heuristics:</span>
+              Classify motion patterns using interpretable thresholds (speed, jerk, safety ratio) under each traffic scenario.
+            </li>
+            <li class="mb-2">
+              <span style="font-weight: bold; color: #6a0dad;">VLM-based reasoning:</span>
+              Leverages a fine-tuned vision-language model to extract <em>semantic intents</em> from bird's-eye view images.
+            </li>
+            <li class="mb-2">
+              <span style="font-weight: bold; color: #6a0dad;">Human-in-the-loop verification:</span>
+              Final labels are verified and calibrated via human annotators for robustness and consistency.
+            </li>
+          </ul>
+
+          <p>
+            The dataset spans <strong>11 real-world traffic scenario types</strong> (e.g., intersections, merges, roundabouts), and provides per-scenario safety scores, relative positioning, and temporal style labels.
+          </p>
+
+          <p>
+            With its hybrid annotation strategy and diverse behavior coverage, <strong>StyleDrive</strong> offers a unique resource for modeling, analyzing, and benchmarking <strong>human-aligned autonomous driving</strong>.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
-        <h2 class="title is-3 has-text-centered">Dataset Construction</h2>
-        <div class="content has-text-justified is-size-6">
+        <h2 class="title is-3 has-text-centered mb-5">Dataset Construction</h2>
+
+        <div class="content has-text-justified is-size-5" style="line-height: 1.8;">
           <p>
-            The <strong>StyleDrive</strong> dataset is built through a structured multi-stage pipeline designed to capture both objective driving behavior and subjective driver intent. It begins by categorizing driving clips into traffic scenario types using high-definition map topology. Dynamic contextual cues—such as lead vehicles, pedestrians, and merging risk—are extracted using a fine-tuned vision-language model (VLM), enabling rich semantic scene descriptions.
+            The <strong>StyleDrive</strong> dataset is constructed via a <strong>multi-stage annotation pipeline</strong> designed to capture both low-level behavior and high-level style preferences, grounded in rich semantic contexts.
           </p>
+
           <p>
-            Driving style labels are generated from two complementary sources:
+            The process begins by segmenting raw driving clips into <strong>traffic scenarios</strong> using high-definition map topology. Within each segment, <strong>semantic context</strong>—such as proximity to lead vehicles, pedestrians, or lane merges—is extracted through a fine-tuned <strong>Vision-Language Model (VLM)</strong>, enabling interpretable behavioral grounding.
           </p>
-          <ul>
-            <li><strong>Rule-based heuristics</strong> that analyze motion features (e.g., speed, acceleration, yaw rate) within scenario-specific thresholds;</li>
-            <li><strong>VLM-based reasoning</strong>, which interprets high-level behavioral intent through multimodal prompts.</li>
+
+          <p><strong>Style labeling is performed in three key stages:</strong></p>
+
+          <ul style="list-style: none; padding-left: 0;">
+            <li class="mb-3">
+              <span style="font-weight: bold; color: #6a0dad;">Rule-based analysis:</span>
+              Apply scenario-specific thresholds over motion features (speed, acceleration, yaw rate) to detect patterns like rapid acceleration or risky merges.
+            </li>
+
+            <li class="mb-3">
+              <span style="font-weight: bold; color: #6a0dad;">VLM-based semantic inference:</span>
+              Use VLMs to reason over BEV semantic images and infer behavioral intent via multimodal prompts.
+            </li>
+
+            <li class="mb-3">
+              <span style="font-weight: bold; color: #6a0dad;">Human-in-the-loop refinement:</span>
+              Annotation outputs are reviewed and refined by human annotators to ensure style consistency and realism.
+            </li>
           </ul>
+
           <p>
-            These two annotation streams are fused using a risk-aware strategy and refined through human-in-the-loop verification, ensuring consistency, interpretability, and robustness. The final dataset provides per-scenario style annotations across 11 real-world driving contexts, supporting large-scale learning of personalized autonomous driving behavior.
+            A <strong>risk-aware fusion strategy</strong> combines rule-based and VLM outputs, yielding consistent, interpretable, and scalable style labels. The final dataset includes style annotations across <strong>11 real-world traffic scenario types</strong>, enabling robust personalized driving policy learning.
           </p>
         </div>
 
         <!-- Annotation Framework Image -->
         <figure class="image mt-5">
-          <img src="static/images/anno_framework.png" alt="Annotation Framework Diagram" style="width: 100%; height: auto;">
+          <img src="static/images/anno_framework.png" alt="Annotation Framework Diagram" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
         </figure>
-        <p class="has-text-justified is-size-6 mt-3">
-          <em>Illustration of the annotation pipeline integrating topology, scene semantics, rule-based reasoning, VLM inference, and human verification.</em>
+        <p class="has-text-centered is-size-6 mt-2" style="color: #666;">
+          <em>Annotation pipeline integrating topology segmentation, semantic extraction, rule-based analysis, VLM inference, and human verification.</em>
         </p>
-        
+
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container" style="max-width: 860px;">
-    <h3 class="title is-4">Dataset Structure</h3>
-    <p class="is-size-6">
-      Each annotated instance in the StyleDrive dataset contains rich semantic, dynamic, and contextual attributes. Below is a sample structure of the data format:
-    </p>
 
-    <div class="table-container" style="overflow-x: auto;">
-      <table class="table is-bordered is-fullwidth is-size-7" style="font-family: monospace;">
+<section class="section" >
+  <div class="container" style="max-width: 860px;">
+    <h2 class="title is-3 has-text-centered mb-5">Dataset Structure</h2>
+
+    <div class="content has-text-justified is-size-5" style="line-height: 1.8;">
+      <p>
+        Each annotated sample in the <strong>StyleDrive</strong> dataset encapsulates a wide array of <strong>semantic, dynamic, and contextual attributes</strong>, enabling rich representation of driving behaviors and personalized preferences. The data schema is designed to support learning models that condition on <em>style, motion, perception, and safety cues</em>.
+      </p>
+      <p>
+        Below is a representative structure of one data entry:
+      </p>
+    </div>
+
+    <!-- 表格展示 -->
+    <div class="table-container mt-4" style="overflow-x: auto;">
+      <table class="table is-bordered is-striped is-fullwidth is-size-7" style="font-family: monospace;">
         <thead>
           <tr>
-            <th>Field</th>
+            <th style="width: 32%;">Field</th>
             <th>Description</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>vx_ego, vy_ego, v_ego</td><td>Ego vehicle velocity components (x, y) and magnitude</td></tr>
-          <tr><td>ax_ego, ay_ego, a_ego</td><td>Ego acceleration components and magnitude</td></tr>
-          <tr><td>yaw, yaw_diff</td><td>Heading angle and its temporal difference</td></tr>
-          <tr><td>v_avg, v_std</td><td>Average and standard deviation of ego speed (last 10 frames)</td></tr>
-          <tr><td>vy_max</td><td>Maximum lateral velocity magnitude</td></tr>
-          <tr><td>a_max, a_std, ax_avg</td><td>Maximum acceleration, std of acceleration, average longitudinal acceleration</td></tr>
-          <tr><td>ini_direction_judge</td><td>Initial motion direction category</td></tr>
-          <tr><td>scenario_type</td><td>Scenario type from VLM semantic parsing</td></tr>
-          <tr><td>scene_token</td><td>Unique scene identifier</td></tr>
-          <tr><td>has_left_rear / right_rear</td><td>Boolean flags indicating vehicle presence in rear zones</td></tr>
-          <tr><td>left_rear_min / right_rear_min</td><td>Minimum relative distance to rear vehicles</td></tr>
-          <tr><td>speed_mode</td><td>Speed-related preference classification (e.g., aggressive, conservative)</td></tr>
-          <tr><td>front_frame</td><td>Distance to front vehicle across frames</td></tr>
-          <tr><td>safe_frame</td><td>Frame-wise safety flags</td></tr>
-          <tr><td>safe_ratio, unsafe_ratio, oversafe_ratio</td><td>Distribution of safety judgments</td></tr>
+          <tr><td>vx_ego, vy_ego, v_ego</td><td>Velocity vector (x, y) and magnitude of ego vehicle</td></tr>
+          <tr><td>ax_ego, ay_ego, a_ego</td><td>Acceleration vector and overall acceleration</td></tr>
+          <tr><td>yaw, yaw_diff</td><td>Heading angle and angular change across frames</td></tr>
+          <tr><td>v_avg, v_std</td><td>Average and variability of velocity (last 10 frames)</td></tr>
+          <tr><td>vy_max</td><td>Peak lateral velocity (side-slip indicator)</td></tr>
+          <tr><td>a_max, a_std, ax_avg</td><td>Max, std of acceleration and average forward acceleration</td></tr>
+          <tr><td>ini_direction_judge</td><td>Initial motion direction classification</td></tr>
+          <tr><td>scenario_type</td><td>Semantic scenario type parsed from VLM (e.g., roundabout, crosswalk)</td></tr>
+          <tr><td>scene_token</td><td>Globally unique identifier for each driving scene</td></tr>
+          <tr><td>has_left_rear / right_rear</td><td>Flags indicating rear adjacent vehicles</td></tr>
+          <tr><td>left_rear_min / right_rear_min</td><td>Minimum distances to left/right rear vehicles</td></tr>
+          <tr><td>speed_mode</td><td>Preferred driving style label (Aggressive, Normal, Conservative)</td></tr>
+          <tr><td>front_frame</td><td>Temporal distance series to front vehicle</td></tr>
+          <tr><td>safe_frame</td><td>Boolean safety labels per frame</td></tr>
+          <tr><td>safe_ratio, unsafe_ratio, oversafe_ratio</td><td>Style-based safety distribution over entire scenario</td></tr>
         </tbody>
       </table>
     </div>
+
+    <p class="is-size-6 mt-4 has-text-centered" style="color: #666;">
+      <em>The structured schema supports learning from motion, interaction, semantics, and style.</em>
+    </p>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <h3 class="title is-4 has-text-centered">Traffic Scenario Videos</h3>
-    <p class="is-size-6 has-text-centered mb-4">
-      The StyleDrive dataset covers 11 real-world driving scenarios, each exhibiting distinct challenges and personalized behaviors.
+
+<section class="section" id="Videos">
+  <div class="container is-max-desktop">
+    <h3 class="title is-3 has-text-centered mb-3">Traffic Scenario Videos</h3>
+    <p class="is-size-5 has-text-centered mb-5 has-text-grey">
+      <strong>StyleDrive</strong> includes <strong>11 diverse real-world traffic scenarios</strong>, capturing personalized driving behaviors across structured and unstructured environments.
     </p>
 
+    <!-- 视频轮播区域 -->
     <div id="video-carousel" class="carousel results-carousel">
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/067328_1629228525900693_5848b2ff8a1959f0.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Crosswalks</strong><br><span class="is-size-7">Navigating pedestrian crossings with varying yielding behaviors</span></p>
+
+      <!-- Crosswalks -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/067328_1629228525900693_5848b2ff8a1959f0.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Crosswalks</strong><br><span class="is-size-7 has-text-grey">Navigating pedestrian crossings with varying yielding behaviors</span></p>
+        </div>
       </div>
 
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/075248_1624471344901481_fc67412be3615e37.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Lane Following</strong><br><span class="is-size-7">Maintaining lane center under speed and curvature variations</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/077952_1624460617600689_1ffb98a4f73b58bc.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Protected Intersections</strong><br><span class="is-size-7">Turning or crossing with clear traffic signals or stop signs</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/064520_1630418176799823_9dffe4e7a06a5c6e.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Unprotected Intersections</strong><br><span class="is-size-7">Negotiating multi-agent crossings without explicit right-of-way</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/079168_1626454279599838_0afd7a88e5d75e86.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Lane Change</strong><br><span class="is-size-7">Executing safe or assertive lane shifts in dense or sparse traffic</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/028488_1626398883599632_7f5c568556895ccf.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Side Ego to Main</strong><br><span class="is-size-7">Entering a main road from a side street with merging considerations</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/072712_1623279250300850_d894416d0aa559ad.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Side to Main Ego</strong><br><span class="is-size-7">Ego vehicle on main road encounters merging side traffic</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/051476_1626457042600513_0ee4ce6ccacd5074.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Special Interior Road</strong><br><span class="is-size-7">Driving through complex local environments like alleys, parking, or loops</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/078708_1629219116799692_4bfe81933d245ba6.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>Countryside Road</strong><br><span class="is-size-7">Navigating long, curved roads with sparse surrounding vehicles</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/024812_1633119850699512_387ac2febd8e51a6.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>roundabout interior</strong><br><span class="is-size-7">Maintaining trajectory inside multi-lane roundabout with potential exits</span></p>
-      </div>
-      <div class="item has-text-centered">
-        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
-          <source src="static/videos/037048_1633103723299995_b6556bf2248c5e02.mp4" type="video/mp4">
-        </video>
-        <p class="mt-2"><strong>roundabout Entrance</strong><br><span class="is-size-7">Merging into circular flow under dynamic vehicle interactions</span></p>
+      <!-- Lane Following -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/075248_1624471344901481_fc67412be3615e37.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Lane Following</strong><br><span class="is-size-7 has-text-grey">Maintaining lane center under speed and curvature variations</span></p>
+        </div>
       </div>
 
-      <!-- Repeat for other scenarios -->
+      <!-- Protected Intersections -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/077952_1624460617600689_1ffb98a4f73b58bc.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Protected Intersections</strong><br><span class="is-size-7 has-text-grey">Turning or crossing with clear traffic signals or stop signs</span></p>
+        </div>
+      </div>
+
+      <!-- Unprotected Intersections -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/064520_1630418176799823_9dffe4e7a06a5c6e.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Unprotected Intersections</strong><br><span class="is-size-7 has-text-grey">Negotiating multi-agent crossings without explicit right-of-way</span></p>
+        </div>
+      </div>
+
+      <!-- Lane Change -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/079168_1626454279599838_0afd7a88e5d75e86.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Lane Change</strong><br><span class="is-size-7 has-text-grey">Executing safe or assertive lane shifts in dense or sparse traffic</span></p>
+        </div>
+      </div>
+
+      <!-- Side Ego to Main -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/028488_1626398883599632_7f5c568556895ccf.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Side Ego to Main</strong><br><span class="is-size-7 has-text-grey">Entering a main road from a side street with merging considerations</span></p>
+        </div>
+      </div>
+
+      <!-- Side to Main Ego -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/072712_1623279250300850_d894416d0aa559ad.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Side to Main Ego</strong><br><span class="is-size-7 has-text-grey">Ego vehicle on main road encounters merging side traffic</span></p>
+        </div>
+      </div>
+
+      <!-- Special Interior Road -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/051476_1626457042600513_0ee4ce6ccacd5074.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Special Interior Road</strong><br><span class="is-size-7 has-text-grey">Driving through complex local environments like alleys, parking, or loops</span></p>
+        </div>
+      </div>
+
+      <!-- Countryside Road -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/078708_1629219116799692_4bfe81933d245ba6.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Countryside Road</strong><br><span class="is-size-7 has-text-grey">Navigating long, curved roads with sparse surrounding vehicles</span></p>
+        </div>
+      </div>
+
+      <!-- Roundabout Interior -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/024812_1633119850699512_387ac2febd8e51a6.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Roundabout Interior</strong><br><span class="is-size-7 has-text-grey">Maintaining trajectory inside multi-lane roundabout with potential exits</span></p>
+        </div>
+      </div>
+
+      <!-- Roundabout Entrance -->
+      <div class="item has-text-centered px-2">
+        <div class="box" style="border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); padding: 1rem;">
+          <video autoplay muted loop playsinline preload="none" loading="lazy" width="100%" style="border-radius: 12px;">
+            <source src="static/videos/037048_1633103723299995_b6556bf2248c5e02.mp4" type="video/mp4">
+          </video>
+          <p class="mt-3"><strong>Roundabout Entrance</strong><br><span class="is-size-7 has-text-grey">Merging into circular flow under dynamic vehicle interactions</span></p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -383,23 +535,35 @@ Benchmarking of End-To-End Autonomous Driving</h1>
 
 
 
-<section class="section">
+<section class="section" id="Benchmark">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
         <h2 class="title is-3 has-text-centered">StyleDrive Benchmark</h2>
-        <div class="content has-text-justified is-size-6">
+        <div class="content has-text-justified is-size-6" style="line-height: 1.8;">
           <p>
-            The <strong>StyleDrive Benchmark</strong> is a standardized evaluation framework designed to assess whether end-to-end autonomous driving models can generate behavior aligned with specific driving styles. Built upon the StyleDrive dataset, it leverages a closed-loop simulation environment based on NavSim to replay real-world scenarios under model control.
+            The <strong style="color: #6a0dad;">StyleDrive Benchmark</strong> introduces a standardized evaluation suite for <strong>personalized end-to-end autonomous driving</strong>. It extends the StyleDrive dataset into a closed-loop testing environment built upon the <strong style="color: #6a0dad;">NavSim simulator</strong>, allowing models to be evaluated in realistic, interactive traffic scenes.
           </p>
+
           <p>
-            Central to the benchmark is the <strong>Style-Modulated Predictive Driver Model Score (SM-PDMS)</strong>, a composite metric that evaluates not only safety and feasibility (e.g., time-to-collision, lane adherence) but also style alignment—such as comfort, assertiveness, and responsiveness—conditioned on target driving preferences (<em>Aggressive</em>, <em>Normal</em>, <em>Conservative</em>).
+            At the core of this benchmark is the <strong style="color: #6a0dad;">Style-Modulated Predictive Driver Model Score (SM-PDMS)</strong>. This metric jointly captures:
           </p>
+
+          <ul style="margin-left: 1rem;">
+            <li><strong>Feasibility:</strong> including lane adherence, goal completion, and safety (e.g., collision-free trajectory, time-to-collision).</li>
+            <li><strong>Style Alignment:</strong> assessing how well the generated behaviors reflect target preferences across axes such as comfort, caution, and responsiveness.</li>
+          </ul>
+
           <p>
-            To demonstrate applicability, the benchmark includes several style-conditioned baselines across different model families (e.g., MLP, Transformer, Diffusion-based). Experimental results show that incorporating driving style into model inputs significantly improves alignment with human demonstrations while maintaining safety and performance.
+            Evaluation is conducted under three canonical driving styles — <strong style="color: #6a0dad;">Aggressive</strong>, <strong style="color: #6a0dad;">Normal</strong>, and <strong style="color: #6a0dad;">Conservative</strong>. Each policy is conditioned on a target style label and deployed in multiple real-world driving contexts.
           </p>
+
           <p>
-            The benchmark enables reproducible, quantitative comparison of personalized driving policies, providing a foundation for future research in controllable and human-aligned autonomous driving.
+            We implement baseline controllers spanning multiple model families — including MLP-based predictors, transformer architectures, and diffusion-policy networks. Experimental results consistently demonstrate that <strong style="color: #6a0dad;">style-aware models</strong> achieve higher SM-PDMS scores and produce behaviors more closely aligned with human demonstrations.
+          </p>
+
+          <p>
+            This benchmark provides a reproducible, quantitative platform for evaluating <strong>style-conditioned policy learning</strong>. It serves as a crucial step toward developing <strong>human-aligned, preference-aware driving agents</strong> in real-world environments.
           </p>
         </div>
       </div>
@@ -409,26 +573,29 @@ Benchmarking of End-To-End Autonomous Driving</h1>
 
 
 
+
 <section class="section">
   <div class="container" style="max-width: 860px;">
-    <!-- Table 3 -->
+
+    <!-- Main Results Table -->
     <div class="content has-text-centered">
-      <h3 class="title is-4">DriveStyle Benchmark Main Results</h3>
+      <h3 class="title is-4">Benchmark Performance across Model Families</h3>
       <p class="is-size-6">
-        Style conditioning improves behavioral alignment, as reflected by higher SM-PDMS scores across most model families.
+        The following table summarizes the performance of various E2EAD models under <strong style="color:#6a0dad">style-conditioned evaluation</strong> using the SM-PDMS framework. Higher scores indicate better feasibility and alignment with target driving preferences.
       </p>
     </div>
+
     <div class="table-container" style="overflow-x: auto;">
-      <table class="table is-bordered is-striped is-fullwidth is-size-7">
+      <table class="table is-bordered is-striped is-fullwidth is-size-7 has-text-centered">
         <thead>
           <tr>
-            <th>Models</th>
+            <th>Model</th>
             <th>NC ↑</th>
             <th>DAC ↑</th>
             <th>TTC ↑</th>
             <th>Comf. ↑</th>
             <th>EP ↑</th>
-            <th>SM-PDMS ↑</th>
+            <th><span style="color:#6a0dad">SM-PDMS ↑</span></th>
           </tr>
         </thead>
         <tbody>
@@ -436,44 +603,31 @@ Benchmarking of End-To-End Autonomous Driving</h1>
           <tr><td>TransFuser</td><td>96.74</td><td>88.43</td><td>91.08</td><td>99.65</td><td>84.39</td><td>78.12</td></tr>
           <tr><td>WoTE</td><td>97.29</td><td>92.39</td><td>92.53</td><td>99.13</td><td>76.31</td><td>79.56</td></tr>
           <tr><td>DiffusionDrive</td><td>96.66</td><td>91.45</td><td>90.63</td><td>99.73</td><td>80.39</td><td>79.33</td></tr>
-          <tr><td>AD-MLP-Style</td><td>92.38</td><td>73.23</td><td>83.14</td><td style="color: red;">99.90</td><td>78.55</td><td>60.02</td></tr>
-          <tr><td>TransFuser-Style</td><td>97.23</td><td>90.36</td><td>92.61</td><td>99.73</td><td style="color: red;">84.95</td><td>81.09</td></tr>
-          <tr><td>WoTE-Style</td>
-              <td style="color: blue;">97.58</td>
-              <td style="color: blue;">93.44</td>
-              <td style="color: blue;">93.70</td>
-              <td>99.26</td>
-              <td>77.38</td>
-              <td style="color: blue;">81.38</td>
-          </tr>
-          <tr><td>DiffusionDrive-Style</td>
-              <td style="color: red;">97.81</td>
-              <td style="color: red;">93.45</td>
-              <td style="color: red;">92.81</td>
-              <td style="color: red;">99.85</td>
-              <td style="color: red;">84.84</td>
-              <td style="color: red;">84.10</td>
-          </tr>
+          <tr><td>AD-MLP-Style</td><td>92.38</td><td>73.23</td><td>83.14</td><td><span style="color: red">99.90</span></td><td>78.55</td><td>60.02</td></tr>
+          <tr><td>TransFuser-Style</td><td>97.23</td><td>90.36</td><td>92.61</td><td>99.73</td><td><span style="color: red">84.95</span></td><td>81.09</td></tr>
+          <tr><td>WoTE-Style</td><td><span style="color: blue">97.58</span></td><td><span style="color: blue">93.44</span></td><td><span style="color: blue">93.70</span></td><td>99.26</td><td>77.38</td><td><span style="color: blue">81.38</span></td></tr>
+          <tr><td>DiffusionDrive-Style</td><td><span style="color: red">97.81</span></td><td><span style="color: red">93.45</span></td><td><span style="color: red">92.81</span></td><td><span style="color: red">99.85</span></td><td><span style="color: red">84.84</span></td><td><span style="color: red">84.10</span></td></tr>
         </tbody>
       </table>
     </div>
 
-        <!-- Table 4 -->
-    <div class="content has-text-centered">
-      <h3 class="title is-4">Closeness to Human Demonstrations</h3>
+    <!-- Human Alignment Table -->
+    <div class="content has-text-centered mt-6">
+      <h3 class="title is-4">Trajectory Consistency with Human Demonstrations</h3>
       <p class="is-size-6">
-        Style-conditioned models exhibit lower L2 trajectory error compared to vanilla models, highlighting improved consistency with human driving behavior under preference-aware conditions.
+        We further evaluate <strong style="color:#6a0dad">trajectory-level similarity</strong> via L2 error across prediction horizons. Style-aware models consistently reduce average L2 distance, indicating stronger alignment with human-like driving behavior.
       </p>
     </div>
+
     <div class="table-container" style="overflow-x: auto;">
-      <table class="table is-bordered is-striped is-fullwidth is-size-7">
+      <table class="table is-bordered is-striped is-fullwidth is-size-7 has-text-centered">
         <thead>
           <tr>
-            <th>Models</th>
+            <th>Model</th>
             <th>L2 (2s) ↓</th>
             <th>L2 (3s) ↓</th>
             <th>L2 (4s) ↓</th>
-            <th>L2 (Avg) ↓</th>
+            <th>L2 Avg ↓</th>
           </tr>
         </thead>
         <tbody>
@@ -494,29 +648,41 @@ Benchmarking of End-To-End Autonomous Driving</h1>
       </table>
     </div>
 
-    <!-- Spacer -->
     <br><br>
-
   </div>
 </section>
 
 
-<section class="section">
+
+<section class="section" id="CaseStudy">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
         <h2 class="title is-3 has-text-centered">Qualitative Case Study of Style Effects</h2>
-        <figure class="image mt-4">
-          <img src="static/images/Policy_Cases.png" alt="Alternative Annotation Framework" style="width: 100%; height: auto;">
-        </figure>
-        <p class="has-text-justified is-size-6 mt-3">
-          Qualitative illustration of DiffusionDrive-Style predictions under different style conditions across identical scenarios. Left: Aggressive vs. Normal; Right: Conservative vs. Normal. Red lines indicate the model's predicted trajectory under the given style condition; green lines denote the ground-truth human trajectory. Clear behavioral differences emerge with style variation, reflecting the model's ability to adapt its outputs to driving preferences.
-          <!-- <em>An alternative visualization of the annotation process, highlighting semantic extraction, behavioral labeling, and human-in-the-loop fusion.</em> -->
+
+        <p class="is-size-6 has-text-justified mb-5">
+          To further analyze the impact of style-conditioning, we visualize <strong style="color:#6a0dad">DiffusionDrive-Style</strong> predictions under controlled scenario conditions. The same traffic environment is used while varying only the driving style input: <strong style="color:#6a0dad">Aggressive</strong>, <strong style="color:#6a0dad">Normal</strong>, and <strong style="color:#6a0dad">Conservative</strong>.
         </p>
+
+        <figure class="image mb-4">
+          <img src="static/images/Policy_Cases.png" alt="Style-Conditioned Trajectories" style="width: 100%; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.06);">
+        </figure>
+
+        <p class="is-size-6 has-text-justified">
+          <strong style="color:#fa0000">Red dotted lines</strong> represent predicted trajectories generated by the model under each style condition, while <strong class="has-text-success">green dotted lines</strong> show the corresponding human demonstrations. Distinct patterns emerge:
+          <ul class="mt-3" style="margin-left: 1rem;">
+            <li><strong>Aggressive:</strong> higher speeds, sharper turns, assertive merging behavior.</li>
+            <li><strong>Normal:</strong> stable lane following, moderate acceleration, balanced risk.</li>
+            <li><strong>Conservative:</strong> longer following distances, reduced velocity, safer decisions at intersections.</li>
+          </ul>
+          These visual comparisons illustrate the <strong style="color:#6a0dad">model's controllability</strong> and its capability to align outputs with high-level human preferences across complex driving scenes.
+        </p>
+
       </div>
     </div>
   </div>
 </section>
+
 
 
 <section class="section">
@@ -551,7 +717,7 @@ Benchmarking of End-To-End Autonomous Driving</h1>
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <section class="section" id="BibTeX" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code> @article{hao2025styledrive,

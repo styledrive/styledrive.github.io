@@ -1,11 +1,14 @@
 :root {
-  --main-purple: #6a0dad;
-  --highlight: #ffe14d;
-  --main-font: 'Inter', sans-serif;
+  --primary-bg: #ffffff;
+  --primary-text: #111111;
+  --accent: #6a0dad;
+  --accent-light: #e0d9f4;
 }
 
 body {
-  font-family: var(--main-font);
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
   padding-top: 4.5rem;
 }
 
@@ -45,10 +48,29 @@ body {
 
 /* 右侧链接 */
 .nav-link {
+  position: relative;
+  color: white !important;
+  padding: 0.75rem 1.2rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 0%;
+  height: 2px;
+  background-color: #ffe14d;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 60%;
+  left: 20%;
+}
+
 
 .nav-link:hover {
   color: #ffe14d;
@@ -235,3 +257,13 @@ body {
   transform: scale(1.05);
 }
 
+.publication-authors a {
+  color: #6a0dad !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+  color: #4e0cae !important;
+}
