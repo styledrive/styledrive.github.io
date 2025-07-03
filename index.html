@@ -168,7 +168,12 @@ Benchmarking of End-To-End Autonomous Driving</h1>
           <img src="static/images/overview.png" alt="Overview Figure" style="width: 100%; height: auto;">
         </figure>
         <p class="has-text-justified is-size-6 mt-4">
-          The figure illustrates the modeling pipeline of <strong>StyleDrive</strong>, where static road topology and dynamic context are extracted and annotated to generate high-quality driving style labels via both rule-based and VLM-based reasoning.
+          The figure illustrates the motivation and overview of StyleDrive.
+          Users increasingly expect AVs not just to drive safely—but to drive like them. 
+          Integrating personalization into E2EAD is challenging due to 
+          (1) the lack of real-world datasets with style annotations enabling E2EAD, and 
+          (2) limited architectures consider style preference as condition in E2E manner.  
+          To bridge this gap, we present the first real-world dataset and benchmark tailored for personalized E2EAD.
         </p>
       </div>
     </div>
@@ -465,11 +470,12 @@ Benchmarking of End-To-End Autonomous Driving</h1>
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
-        <h2 class="title is-3 has-text-centered">Case View</h2>
+        <h2 class="title is-3 has-text-centered">Qualitative Case Study of Style Effects</h2>
         <figure class="image mt-4">
           <img src="static/images/Policy_Cases.png" alt="Alternative Annotation Framework" style="width: 100%; height: auto;">
         </figure>
         <p class="has-text-justified is-size-6 mt-3">
+          Qualitative illustration of DiffusionDrive-Style predictions under different style conditions across identical scenarios. Left: Aggressive vs. Normal; Right: Conservative vs. Normal. Red lines indicate the model's predicted trajectory under the given style condition; green lines denote the ground-truth human trajectory. Clear behavioral differences emerge with style variation, reflecting the model's ability to adapt its outputs to driving preferences.
           <!-- <em>An alternative visualization of the annotation process, highlighting semantic extraction, behavioral labeling, and human-in-the-loop fusion.</em> -->
         </p>
       </div>
