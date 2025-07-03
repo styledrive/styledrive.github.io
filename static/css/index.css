@@ -315,3 +315,25 @@ body {
     max-height: 56px;
   }
 }
+
+.button.is-purple {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+}
+.external-link.button:hover {
+  background-color: #ffffff !important;
+  color: #6a0dad !important;
+  border: 1px solid #6a0dad;
+  transition: all 0.2s ease;
+}
+
+/* 图标也变色（如果是 <i> 标签） */
+.external-link.button:hover i {
+  color: #6a0dad !important;
+}
+
+/* 图标是 <img> 的情况，可以用滤镜变色（灰转紫）但建议图标本身就带色） */
+.external-link.button:hover img {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(72%) saturate(4051%) hue-rotate(269deg) brightness(90%) contrast(101%);
+}
