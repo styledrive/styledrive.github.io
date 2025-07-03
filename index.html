@@ -708,6 +708,12 @@ Benchmarking of End-To-End Autonomous Driving</h1>
 
 
 
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Leaderboard (Coming Soon)</h2>
+    <p class="has-text-centered is-size-6">Evaluate your model on the StyleDrive Benchmark and see how it ranks.</p>
+  </div>
+</section>
 
 
 
@@ -716,18 +722,35 @@ Benchmarking of End-To-End Autonomous Driving</h1>
 
 
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code> @article{hao2025styledrive,
+<section class="section has-background-white-ter" id="BibTeX">
+  <div class="container is-max-desktop">
+    <div class="box bibtex-box">
+      <h2 class="title is-3 has-text-centered mb-3">
+        <span style="font-weight: 700;">📖 Cite <span style="color:#6a0dad;">StyleDrive</span></span>
+      </h2>
+      <p class="is-size-5 has-text-centered has-text-grey-dark mb-5">
+        If you find <strong style="color:#6a0dad;">StyleDrive</strong> useful in your research, please consider citing:
+      </p>
+
+      <div class="bibtex-content">
+        <pre id="bibtex-code"><code>@article{hao2025styledrive,
   title={StyleDrive: Towards Driving-Style Aware Benchmarking of End-To-End Autonomous Driving},
   author={Hao, Ruiyang and Jing, Bowen and Yu, Haibao and Nie, Zaiqing},
   journal={arXiv preprint arXiv:2506.23982},
   year={2025}
 }</code></pre>
+      </div>
+
+      <div class="has-text-centered mt-4">
+        <button class="button copy-btn" id="copyBibBtn" onclick="copyBibtex()">📋 Copy BibTeX</button>
+      </div>
     </div>
+  </div>
 </section>
+
+
+
+
 
 <footer class="footer has-text-centered footer-affiliation">
   <h2 class="title is-5 mb-4">Affiliations</h2>
@@ -770,6 +793,7 @@ Benchmarking of End-To-End Autonomous Driving</h1>
   });
 </script>
 
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.navbar-burger');
@@ -784,6 +808,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+function copyBibtex() {
+  const text = document.getElementById('bibtex-code').innerText;
+  const btn = document.getElementById('copyBibBtn');
+
+  navigator.clipboard.writeText(text).then(() => {
+    // 改变样式为 success
+    btn.classList.add('is-success');
+    btn.classList.remove('is-light');
+    btn.innerHTML = '✅ Copied!';
+
+    // 恢复原状（例如 3 秒后）
+    setTimeout(() => {
+      btn.classList.remove('is-success');
+      btn.innerHTML = '📋 Copy BibTeX';
+    }, 3000);
+  });
+}
+</script>
 
 
   </body>

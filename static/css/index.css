@@ -267,3 +267,36 @@ body {
   text-decoration: underline;
   color: #4e0cae !important;
 }
+
+.bibtex-box {
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(106, 13, 173, 0.1);
+}
+
+.bibtex-content {
+  background-color: #f8f8fc;
+  border-left: 4px solid #6a0dad;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  color: #2e2e2e;
+}
+
+.copy-btn {
+  border: 1.5px solid #6a0dad;
+  background-color: white;
+  color: #6a0dad;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.copy-btn:hover {
+  background-color: #6a0dad;
+  color: white;
+}

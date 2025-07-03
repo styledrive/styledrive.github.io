@@ -37,3 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+<script>
+function copyBibtex() {
+  const text = document.getElementById('bibtex-code').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("✅ BibTeX copied to clipboard!");
+  });
+}
+</script>
