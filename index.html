@@ -45,6 +45,27 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
+<nav class="navbar is-fixed-top has-background-purple" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item has-text-white" href="#">
+      <strong>StyleDrive</strong>
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item has-text-white" href="#BibTeX">
+        BibTeX
+      </a>
+      <a class="navbar-item has-text-white" href="#video-carousel">
+        Videos
+      </a>
+      <a class="navbar-item has-text-white" href="#Dataset">
+        Dataset
+      </a>
+    </div>
+  </div>
+</nav>
 
 
   <section class="hero">
@@ -80,22 +101,35 @@ Benchmarking of End-To-End Autonomous Driving</h1>
                         <a href="https://arxiv.org/pdf/2506.23982" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
+                          <i class="ai ai-arxiv"></i>
                         </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+                        <span>arXiv</span>
+                        </a>
+                      </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="https://huggingface.co/datasets/Ryhn98/StyleDrive-Dataset" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="HF" style="height: 1em;">
+                      <!-- Dataset link with custom dataset icon -->
+                      <span class="link-block">
+                        <a href="https://huggingface.co/datasets/Ryhn98/StyleDrive-Dataset" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/16630/16630912.png" alt="Dataset Icon" style="height: 1em;">
+                          </span>
+                          <span>Dataset</span>
+                        </a>
                       </span>
-                      <span>Huggingface</span>
-                    </a>
-                  </span>
+
+
+                      <span class="link-block">
+                        <a href="https://huggingface.co/datasets/Ryhn98/StyleDrive-Dataset" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;">
+                          </span>
+                          <span>Hugging Face</span>
+                        </a>
+                      </span>
+
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -109,14 +143,7 @@ Benchmarking of End-To-End Autonomous Driving</h1>
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2506.23982" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
+
               </span>
             </div>
           </div>
@@ -544,6 +571,11 @@ Benchmarking of End-To-End Autonomous Driving</h1>
     navigation: true
   });
 </script>
+
+<a id="back-to-top" title="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
 
   </body>
 </html>

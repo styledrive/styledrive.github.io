@@ -19,3 +19,20 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+
+// Show button after scrolling down
+window.onscroll = function() {
+  const btn = document.getElementById("back-to-top");
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+
+// Scroll to top on click
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById("back-to-top").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
