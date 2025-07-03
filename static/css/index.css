@@ -1,9 +1,12 @@
-body {
-  font-family: 'Noto Sans', sans-serif;
+:root {
+  --main-purple: #6a0dad;
+  --highlight: #ffe14d;
+  --main-font: 'Inter', sans-serif;
 }
 
-.has-background-purple {
-  background-color: #6a0dad !important;  /* 紫色 */
+body {
+  font-family: var(--main-font);
+  padding-top: 4.5rem;
 }
 
 #back-to-top {
@@ -23,6 +26,69 @@ body {
 #back-to-top:hover {
   background-color: #5a0dad;
 }
+
+/* 背景渐变 + 轻透明感 */
+.custom-navbar {
+  background: rgba(106, 13, 173, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.site-name {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: white !important;
+}
+
+/* 右侧链接 */
+.nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffe14d;
+}
+
+/* Mobile burger 展开支持 */
+.navbar-burger {
+  color: white;
+}
+
+/* 背景改为柔和毛玻璃圆角卡片风格 */
+/* 移除 navbar-menu 上的 box 样式 */
+.navbar-menu {
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* 菜单项圆角 + 高级 hover */
+.navbar-menu .navbar-item {
+  font-weight: 500;
+  color: white !important;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu .navbar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--highlight) !important;
+}
+
+/* 激活项样式（可选） */
+.navbar-item.is-active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
 
 
 .footer .icon-link {
@@ -59,12 +125,9 @@ body {
 }
 
 .publication-banner video {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
-  object-fit: fit;
+  object-fit: contain; /* 修复 object-fit: fit 报错 */
 }
+
 
 .publication-header .hero-body {
 }
@@ -156,4 +219,19 @@ body {
 }
 
 
+.footer-affiliation {
+  background: #ffffff;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-logo {
+  height: 64px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0));
+  transition: transform 0.2s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+}
 
