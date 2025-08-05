@@ -695,6 +695,38 @@ Benchmarking of End-To-End Autonomous Driving</h1>
       </table>
     </div>
 
+    <div class="container" style="max-width: 860px;">
+
+    <!-- Main Results Table -->
+    <div class="content has-text-centered">
+      <h3 class="title is-4">Ablation of Fixed Style Conditioning</h3>
+      <p class="is-size-6">
+        The following table summarizes the performance of DiffusionDrive-Style model under <strong style="color:#6a0dad">Fixed style-conditioning</strong>. This ablation results further confirm the effectiveness and learnability of style conditioning.
+      </p>
+    </div>
+
+    <div class="table-container" style="overflow-x: auto;">
+      <table class="table is-bordered is-striped is-fullwidth is-size-7 has-text-centered">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>NC ↑</th>
+            <th>DAC ↑</th>
+            <th>TTC ↑</th>
+            <th>Comf. ↑</th>
+            <th>EP ↑</th>
+            <th><span style="color:#6a0dad">SM-PDMS ↑</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>DiffusionDrive-Style</td><td><span style="color: red">97.81</span></td><td><span style="color: red">93.45</span></td><td><span style="color: red">92.81</span></td><td><span style="color: red">99.85</span></td><td><span style="color: red">84.84</span></td><td><span style="color: red">84.10</span></td></tr>
+          <tr><td>DiffusionDrive-Style-A</td><td>97.38</td><td>93.20</td><td>92.01</td><td>99.62</td><td>84.01</td><td>83.04</td></tr>
+          <tr><td>DiffusionDrive-Style-A</td><td>97.66</td><td>93.32</td><td>92.16</td><td>99.83</td><td><span style="color: blue">84.21</span></td><td>83.52</td></tr>
+          <tr><td>DiffusionDrive-Style-A</td><td><span style="color: blue">98.23</span></td><td><span style="color: blue">93.59</span></td><td><span style="color: blue">94.98</span></td><td><span style="color: blue">99.87</span></td><td>81.36</td><td><span style="color: blue">83.90</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- Human Alignment Table -->
     <div class="content has-text-centered mt-6">
       <h3 class="title is-4">Trajectory Consistency with Human Demonstrations</h3>
